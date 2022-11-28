@@ -2,13 +2,14 @@ import './App.css';
 import { Header ,Home,Library,Bonus,Search, Sidebar,Songs} from './Components';
 
 import {BrowserRouter, Route, Routes, Link} from "react-router-dom"
+import { useContext } from 'react';
+import { DataContexts } from './Components/DataContext';
 
 function App() {
+  const dataProvider = useContext(DataContexts)
   return (
     <BrowserRouter>
-
-
-
+      <dataProvider>
 
     <div className="App">
       <Sidebar/>
@@ -26,6 +27,10 @@ function App() {
 
       </div>
     </div>
+      </dataProvider>
+
+
+
     </BrowserRouter>
   );
 }

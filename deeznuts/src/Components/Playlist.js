@@ -8,6 +8,6 @@ export const Playlist = (props) => {
         <Link to={`/playlist/${props.id + 1}`} style={{textDecoration: 'none'}}>
             <h4 className="playName">{props.name}</h4>
         </Link>
-        <h5 className="playArtist">Votes: {props.votes}</h5>
+        <h5 className="playArtist">By: {props.maker}</h5>
     </div>
 }
