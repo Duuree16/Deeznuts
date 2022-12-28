@@ -1,38 +1,38 @@
-import './App.css';
-import { Header, Home, Library, Bonus, Search, Sidebar, Songs } from './Components';
-
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom"
-import { useContext } from 'react';
-import { DataContexts } from './Components/DataContext';
+import './App.css'
+import {
+  Header,
+  Home,
+  Library,
+  Bonus,
+  Search,
+  Sidebar,
+  ListSongs,
+  AddList,
+} from './Components'
+import { DataProvider } from './Providers/DataProvider'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
-  const dataProvider = useContext(DataContexts)
   return (
-    <BrowserRouter>
-      <dataProvider>
-
+    <DataProvider>
+      <BrowserRouter>
         <div className="App">
           <Sidebar />
           <div className="Container">
             <Header />
             <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/search' element={<Search />} />
-              <Route path='/library' element={<Library />} />
-              <Route path='/bonus' element={<Bonus />} />
-              <Route path='/playlist'>
-                <Route path=":number" element={<Songs />} />
-              </Route>
+              <Route path="/" element={<Home />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/library" element={<Library />} />
+              <Route path="/bonus" element={<Bonus />} />
+              <Route path="/playlist/:id" element={<ListSongs />} />
+              <Route path="/addlist" element={<AddList />} />
             </Routes>
-
           </div>
         </div>
-      </dataProvider>
-
-
-
-    </BrowserRouter>
-  );
+      </BrowserRouter>
+    </DataProvider>
+  )
 }
 
-export default App;
+export default App
