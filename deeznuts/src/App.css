@@ -11,6 +11,7 @@ a {
 
 .App {
   overflow-x: hidden;
+  overflow-y: hidden;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -25,6 +26,7 @@ a {
 .Container {
   width: calc(100vw - 300px);
   height: 100vh;
+  overflow-y: auto;
   background-color: #141414;
 }
 
