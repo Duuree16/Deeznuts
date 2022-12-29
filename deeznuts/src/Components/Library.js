@@ -1,12 +1,12 @@
-import { useContext } from 'react'
-import '../App.css'
-import { DataContext } from '../Providers/DataProvider'
-import { List } from './Lists'
+import { useContext } from "react";
+import "../App.css";
+import { DataContext } from "../Providers/DataProvider";
+import { List } from "./Lists";
 
 export const Library = () => {
-  const { playlistData } = useContext(DataContext)
+  const { playlistData } = useContext(DataContext);
 
-  console.log(playlistData)
+  console.log(playlistData);
   return (
     playlistData && (
       <div className="display">
@@ -20,5 +20,5 @@ export const Library = () => {
         ))}
       </div>
     )
-  )
-}
+  );
+};

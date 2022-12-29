@@ -58,6 +58,7 @@
   background-color: transparent;
   outline: none;
   border: none;
+  padding: 10px;
   margin-bottom: 20px;
   width: 60%;
   border-bottom: white 1px solid;
@@ -68,7 +69,18 @@
   background-color: transparent;
   border-radius: 10px;
 }
+.addbutton2 {
+  border: 1px white dashed;
+  padding: 2px;
+  min-width: 150px;
+  background-color: transparent;
+  border-radius: 10px;
+
+}
 .deleter{
     margin: 10px;
   color: red;
+}
+.stiker{
+  display: flex;
 }
