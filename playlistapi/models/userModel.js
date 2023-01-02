@@ -1,11 +1,15 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require('mongoose')
 
 const userSchema = new Schema({
   username: {
     type: String,
     required: true,
   },
-  password: {
+  firebaseId: {
+    type: String,
+    required: true,
+  },
+  email: {
     type: String,
     required: true,
   },
@@ -13,8 +17,8 @@ const userSchema = new Schema({
     type: Date,
     default: Date.now(),
   },
-});
+})
 
-const User = model("User", userSchema);
+const User = model('User', userSchema)
 
-module.exports = User;
+module.exports = User
