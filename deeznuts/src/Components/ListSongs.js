@@ -58,7 +58,7 @@ export const ListSongs = (props) => {
             if (search) {
               return (
                 (element.name.toLowerCase().includes(search.toLowerCase()) ||
-                  element.artist
+                  element.artist.name
                     .toLowerCase()
                     .includes(search.toLowerCase())) && (
                   <div className={styles.stiker}>

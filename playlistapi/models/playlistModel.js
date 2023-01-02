@@ -3,7 +3,7 @@ const { Schema, model, Types } = require("mongoose");
 const playlistSchema = new Schema({
   title: String,
   description: String,
-  CreatorName:String,
+  CreatorName: String,
   CreatorId: Types.ObjectId,
   createdAt: { type: Date, default: Date.now() },
   updatedAt: Date,
@@ -13,4 +13,4 @@ const playlistSchema = new Schema({
 
 const Playlist = model("list", playlistSchema);
 
-exports.Playlist = Playlist;
+module.exports = Playlist;

@@ -1,14 +1,25 @@
 const { Schema, model, Types } = require("mongoose");
 
 const songSchema = new Schema({
-  name: String,
-  artist: String,
-  duration: Number,
-  createdAt: { type: Date, default: Date.now() },
-  uri: String,
+  name: {
+    type: String,
+    required: true,
+  },
+  creator: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
+  artist: {
+    type: Schema.Types.ObjectId,
+    ref: "artists",
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
+  url: String,
 });
 
 const Song = model("songs", songSchema);
 
-exports.Song = Song;
-//63ab39168119937242d7093f
+module.exports = Song;

@@ -1,4 +1,4 @@
-const { Playlist } = require("../models/playlistModel");
+const { Playlist } = require("../models");
 
 exports.createPlaylist = async (req, res) => {
   const body = req.body;
@@ -12,8 +12,14 @@ exports.getPlaylists = async (req, res) => {
 };
 
 exports.getPlaylist = async (req, res) => {
-  const result = await Playlist.findById(req.params.id).populate("songs");
-  res.send(result)
+  const result = await Playlist.findById(req.params.id).populate({
+    path: "songs",
+    populate: {
+      path: "artist",
+    },
+  });
+
+  res.send(result);
 };
 
 exports.addToPlaylist = async (req, res) => {
@@ -25,7 +31,7 @@ exports.addToPlaylist = async (req, res) => {
   res.send(playlist);
 };
 
-exports.deletePlaylist = async (req,res) => {
-  const result = await Playlist.findByIdAndDelete(req.params.id)
-  res.send(result)
-}
+exports.deletePlaylist = async (req, res) => {
+  const result = await Playlist.findByIdAndDelete(req.params.id);
+  res.send(result);
+};

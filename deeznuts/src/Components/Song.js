@@ -6,7 +6,7 @@ export const Song = ({ element, index }) => {
       {index != NaN && <h5 className={styles.num}>{index + 1}.</h5>}
       <div>
         <h6 className={styles.songname}>{element.name}</h6>
-        <p className={styles.arter}>{element.artist}</p>
+        <p className={styles.arter}>{element.artist.name}</p>
       </div>
     </div>
   );

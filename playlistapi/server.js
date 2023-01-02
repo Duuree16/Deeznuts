@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const connect = require("./config/db");
-const { playlistroutes, songroutes } = require("./routes");
+const { playlistroutes, songroutes, artistroutes } = require("./routes");
 const app = express();
 require("dotenv").config();
 
@@ -12,6 +12,7 @@ connect();
 
 app.use(playlistroutes);
 app.use(songroutes);
+app.use(artistroutes);
 
 const port = process.env.PORT || 8080;
 
