@@ -14,8 +14,8 @@
   color: white;
 }
 .creator {
-    margin: 10px;
-    margin-bottom: -8px;
+  margin: 10px;
+  margin-bottom: -8px;
   color: white;
 }
 .ListSongs {
@@ -75,12 +75,11 @@
   min-width: 150px;
   background-color: transparent;
   border-radius: 10px;
-
 }
-.deleter{
-    margin: 10px;
+.deleter {
+  margin: 10px;
   color: red;
 }
-.stiker{
+.stiker {
   display: flex;
 }

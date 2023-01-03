@@ -16,6 +16,9 @@ export const Sidebar = () => {
       <Link to="/bonus" style={{ textDecoration: 'none' }}>
         <h4 className="option">Explore</h4>
       </Link>
+      <Link to="/profile" style={{ textDecoration: 'none' }}>
+        <h4 className="option">Your Account</h4>
+      </Link>
     </div>
   )
 }
