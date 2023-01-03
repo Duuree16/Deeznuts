@@ -1,11 +1,9 @@
-import '../App.css'
+import "../App.css";
 export const Home = () => {
-  
   return (
     <div className="display">
-      
       <br />
-      Go to Library and Listen Some Stuff
+      <h2>Welcome to Deesnuts!</h2>
     </div>
-  )
-}
+  );
+};

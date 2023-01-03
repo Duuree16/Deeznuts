@@ -4,7 +4,7 @@ const playlistSchema = new Schema({
   title: String,
   description: String,
   CreatorName: String,
-  CreatorId: Types.ObjectId,
+  creator: Types.ObjectId,
   createdAt: { type: Date, default: Date.now() },
   updatedAt: Date,
   isPrivate: Boolean,
