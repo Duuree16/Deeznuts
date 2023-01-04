@@ -21,6 +21,7 @@ export const Library = () => {
                   key={el._id}
                   _id={el._id}
                   title={el.title}
+                  decription={el.decription}
                 />
               )
           )}

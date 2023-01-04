@@ -16,13 +16,23 @@ export const List = (props) => {
 
   return (
     <div className={styles.List}>
-      <Link to={"/playlist/" + props._id} style={{ textDecoration: "none" }}>
-        <h5 className={styles.title}>{props.title}</h5>
-      </Link>
-      <p className={styles.creator}>{props.creator}</p>
-      <p className={styles.deleter} onClick={deleteList}>
-        Delete
-      </p>
+      <div src="../images/Playlist.svg" className={styles.listImg}></div>
+      <div
+        style={{
+          display: "flex",
+          marginBottom: "-10px",
+          width: "100%",
+          justifyContent: "space-between",
+        }}
+      >
+        <Link to={"/playlist/" + props._id} style={{ textDecoration: "none" }}>
+          <h5 className={styles.title}>{props.title}</h5>
+        </Link>
+        <p className={styles.listOption} onClick={deleteList}>
+          ...
+        </p>
+      </div>
+      <h6 className={styles.creator}>{props.creator}</h6>
     </div>
   );
 };

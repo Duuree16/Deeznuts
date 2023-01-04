@@ -27,6 +27,7 @@ a {
   width: calc(100vw - 300px);
   height: 100vh;
   overflow-y: auto;
+  position: relative;
   background-color: #141414;
 }
 
