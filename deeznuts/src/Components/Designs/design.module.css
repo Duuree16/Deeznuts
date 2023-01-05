@@ -22,15 +22,16 @@
   width: 100%;
   height: fit-content;
   min-width: 100px;
-  overflow-y: scroll ;
-  position: relative;
-  margin-top: 340px;
+  overflow-y: scroll;
+  padding-top: 340px;
+}
+.ListSong::-webkit-scrollbar {
+  display: none;
 }
 .Title1 {
   margin: 2vw;
   max-width: 50%;
   font-size: 50px;
-
 }
 .Title {
   margin: 2vw;
@@ -87,28 +88,25 @@
 .listOption {
   width: 200px;
   border-radius: 10px;
-  margin-top: 6px;
-  height: 10px;
-  color: rgb(255, 0, 0); 
+  margin-top: 5px;
 }
 .stiker {
   display: flex;
 }
-.listUp{
-  background: rgb(157,157,157);
-  position: fixed;
+.listUp {
+  background: rgb(157, 157, 157);
+  position: absolute;
   top: 54px;
-  left: 300px;
   min-height: 340px;
   width: 100%;
-  background: rgb(84,84,84);
-  background: linear-gradient(180deg, rgba(84,84,84,1) 1%, rgb(39, 39, 39) 100%);
+  background: rgb(40, 40, 40);
+  background: linear-gradient(180deg, rgb(72, 72, 72) 1%, rgb(32, 32, 32) 100%);
 }
-.listImg{
+.listImg {
   background-color: white;
   background-image: url('../../images/Playlist.svg');
   background-size: 140px;
   width: 140px;
   margin: 10px;
-  height:120px
+  height: 120px;
 }
