@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../Providers/DataProvider";
 import styles from "./Designs/design.module.css";
+import { IoTrashOutline } from "react-icons/io5";
 
 export const List = (props) => {
   const { setPlaylistData } = useContext(DataContext);
@@ -16,7 +17,9 @@ export const List = (props) => {
 
   return (
     <div className={styles.List}>
-      <div src="../images/Playlist.svg" className={styles.listImg}></div>
+      <Link to={"/playlist/" + props._id} style={{ textDecoration: "none" }}>
+        <div src="../images/Playlist.svg" className={styles.listImg}></div>
+      </Link>
       <div
         style={{
           display: "flex",
@@ -28,9 +31,7 @@ export const List = (props) => {
         <Link to={"/playlist/" + props._id} style={{ textDecoration: "none" }}>
           <h5 className={styles.title}>{props.title}</h5>
         </Link>
-        <p className={styles.listOption} onClick={deleteList}>
-          ...
-        </p>
+        <IoTrashOutline className={styles.listOption} onClick={deleteList} />
       </div>
       <h6 className={styles.creator}>{props.creator}</h6>
     </div>
