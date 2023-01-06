@@ -8,10 +8,10 @@ export const DataProvider = (props) => {
   const [playlistData, setPlaylistData] = useState();
   const [songData, setSongData] = useState();
   useEffect(() => {
-    axios.get("http://localhost:3001/lists").then((response) => {
+    axios.get("https://goy-tea.onrender.com/lists").then((response) => {
       setPlaylistData(response.data);
     });
-    axios.get("http://localhost:3001/songs").then((response) => {
+    axios.get("https://goy-tea.onrender.com/songs").then((response) => {
       setSongData(response.data);
     });
   }, []);

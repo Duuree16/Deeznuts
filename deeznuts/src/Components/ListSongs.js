@@ -1,42 +1,44 @@
-import { useParams } from 'react-router-dom'
-import styles from './Designs/design.module.css'
-import axios from 'axios'
-import { useContext, useEffect, useRef, useState } from 'react'
-import { Song } from './Song'
-import { DataContext } from '../Providers/DataProvider'
+import { useParams } from "react-router-dom";
+import styles from "./Designs/design.module.css";
+import axios from "axios";
+import { useContext, useEffect, useRef, useState } from "react";
+import { Song } from "./Song";
+import { DataContext } from "../Providers/DataProvider";
 
 export const ListSongs = (props) => {
-  const parama = useParams()
-  const [data, setData] = useState()
-  const [search, setSearch] = useState()
-  const ref = useRef()
-  const { songData, setPlaylistData } = useContext(DataContext)
+  const parama = useParams();
+  const [data, setData] = useState();
+  const [search, setSearch] = useState();
+  const ref = useRef();
+  const { songData, setPlaylistData } = useContext(DataContext);
   useEffect(() => {
     axios
-      .get('http://localhost:3001/list/' + parama.id)
+      .get("https://goy-tea.onrender.com/list/" + parama.id)
       .then((res) => {
-        setData(res.data)
+        setData(res.data);
       })
       .catch((error) => {
-        console.log(error)
-      })
-  }, [])
+        console.log(error);
+      });
+  }, []);
 
   const addToPlaylist = (songId) => {
-    console.log(songId, parama.id)
+    console.log(songId, parama.id);
     axios
-      .put(`http://localhost:3001/list/${songId}?playlistId=${parama.id}`)
+      .put(
+        `https://goy-tea.onrender.com/list/${songId}?playlistId=${parama.id}`
+      )
       .then(() => {
         axios
-          .get('http://localhost:3001/list/' + parama.id)
+          .get("https://goy-tea.onrender.com/list/" + parama.id)
           .then((res) => {
-            setData(res.data)
+            setData(res.data);
           })
           .catch((error) => {
-            console.log(error)
-          })
-      })
-  }
+            console.log(error);
+          });
+      });
+  };
 
   return (
     data && (
@@ -54,13 +56,13 @@ export const ListSongs = (props) => {
         ))}
         <br />
         <br />
-        <hr style={{ borderTop: '1px solid white' }} />
+        <hr style={{ borderTop: "1px solid white" }} />
         <h4 className={styles.Title}>Let's find something for your playlist</h4>
         <input
           onChange={(e) => {
-            ref.current.scrollTo(0, ref.current.scrollHeight)
-            console.log('ref')
-            return setSearch(e.target.value)
+            ref.current.scrollTo(0, ref.current.scrollHeight);
+            console.log("ref");
+            return setSearch(e.target.value);
           }}
           placeholder="Search for Songs"
           className={styles.addlistname}
@@ -83,10 +85,10 @@ export const ListSongs = (props) => {
                     </button>
                   </div>
                 )
-              )
+              );
             }
           })}
       </div>
     )
-  )
-}
+  );
+};

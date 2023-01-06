@@ -14,7 +14,7 @@ export const AddList = () => {
   const onAdd = () => {
     if (nameref.current.value) {
       axios
-        .post("http://localhost:3001/lists", {
+        .post("https://goy-tea.onrender.com/lists", {
           title: nameref.current.value,
           CreatorName: authUser.username,
           creator: authUser._id,
